@@ -73,6 +73,8 @@ func NewCmdViewSecret() *cobra.Command {
 	cmd.Flags().BoolVarP(&res.quiet, "quiet", "q", res.quiet, "if true, suppresses info output")
 	cmd.Flags().StringVarP(&res.customNamespace, "namespace", "n", res.customNamespace, "override the namespace defined in the current context")
 
+	cmd.AddCommand(NewCmdCompletion())
+
 	return cmd
 }
 
